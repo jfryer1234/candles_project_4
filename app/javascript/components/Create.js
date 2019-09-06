@@ -5,9 +5,9 @@ import React from "react"
 class Create extends React.Component {
   render () {
     return (
-      <div>
-        <h1>create form</h1>
-        <div className="form-div">
+      <div className="form-div">
+        <h1 className="align-center">create form</h1>
+        <div>
           <form>
             <label htmlFor="scent_1">Scent 1:</label>
             <select name="scent_1" id="scent_1">

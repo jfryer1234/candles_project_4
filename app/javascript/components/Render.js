@@ -5,7 +5,9 @@ import React from "react"
 class Render extends React.Component {
   render () {
     return (
-      <h1>Render component</h1>
+      <div className="render-div">
+        <h1>Render component</h1>
+      </div>
     )
   }
 }

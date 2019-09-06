@@ -9,9 +9,13 @@ import Render from "./Render.js"
 class Main extends React.Component {
   render () {
     return (
-      <div><Header />
-      <Create />
-      <Render /> </div>
+      <div>
+        <Header />
+        <div className="mobile-flex">
+          <Create />
+          <Render />
+        </div>
+      </div>
     )
   }
 }
