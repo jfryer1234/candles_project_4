@@ -14,25 +14,69 @@
  *= require_self
  */
 
-
 /* ==================
-| | CREATE FORM
+| | MOBILE VIEW
 ================== */
 
-.form-div {
-  width: 40%;
-}
+  * {
+    border: 1px solid gold;
+  }
 
-.form-div input {
-  width: 100%;
-}
+  body {
+    background-color: lightgreen;
+  }
 
-.form-div select {
-  width: 100%;
-}
+  /* ==== CREATE FORM ==== */
 
-.radio-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .form-div {
+    width: 95%;
+  }
+
+  .form-div input {
+    width: 100%;
+  }
+
+  .form-div select {
+    width: 100%;
+  }
+
+  .radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .align-center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* ==== RENDERED LIST ==== */
+
+  .render-div {
+    text-align: center;
+    width: 95%;
+  }
+
+/* ==================
+| | BROWSER VIEW
+================== */
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .form-div {
+    width: 47%;
+  }
+
+  .render-div {
+    width: 47%;
+  }
+
+  .mobile-flex {
+    display: flex;
+    justify-content: space-between;
+  }
 }
