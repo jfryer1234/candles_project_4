@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* ==================
+| | CREATE FORM
+================== */
+
+.form-div {
+  width: 40%;
+}
+
+.form-div input {
+  width: 100%;
+}
+
+.form-div select {
+  width: 100%;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
