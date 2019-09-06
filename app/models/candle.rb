@@ -29,4 +29,40 @@ class Candle
     end
   end
 
+  # show
+  def self.find(id)
+    results = DB.exec("SELECT * FROM candles WHERE id=#{id};")
+    return {
+        "id" => results.first["id"],
+        "scent_1" => results.first["scent_1"],
+        "scent_2" => results.first["scent_2"],
+        "embellishment" => results.first["embellishment"],
+        "color" => results.first["color"],
+        "packaging" => results.first["packaging"]
+      }
+  end
+
+  # create
+  def self.create(candle)
+    results = DB.exec(
+      <<-SQL
+        INSERT INTO candles (scent_1, scent_2, embellishment, color, packaging)
+        VALUES ('#{candle["scent_1"]}', '#{candle["scent_2"]}', '#{candle["embellishment"]}', '#{candle["color"]}', '#{candle["packaging"]}')
+        RETURNING id, scent_1, scent_2, embellishment, color, packaging;
+      SQL
+    )
+    return {
+        "id" => results.first["id"],
+        "scent_1" => results.first["scent_1"],
+        "scent_2" => results.first["scent_2"],
+        "embellishment" => results.first["embellishment"],
+        "color" => results.first["color"],
+        "packaging" => results.first["packaging"]
+    }
+  end
+
+  # delete
+
+  # update
+
 end
