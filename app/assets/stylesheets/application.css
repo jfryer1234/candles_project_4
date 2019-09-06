@@ -13,3 +13,70 @@
  *= require_tree .
  *= require_self
  */
+
+/* ==================
+| | MOBILE VIEW
+================== */
+
+  * {
+    border: 1px solid gold;
+  }
+
+  body {
+    background-color: lightgreen;
+  }
+
+  /* ==== CREATE FORM ==== */
+
+  .form-div {
+    width: 95%;
+  }
+
+  .form-div input {
+    width: 100%;
+  }
+
+  .form-div select {
+    width: 100%;
+  }
+
+  .radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .align-center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* ==== RENDERED LIST ==== */
+
+  .render-div {
+    text-align: center;
+    width: 95%;
+  }
+
+/* ==================
+| | BROWSER VIEW
+================== */
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .form-div {
+    width: 47%;
+  }
+
+  .render-div {
+    width: 47%;
+  }
+
+  .mobile-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # root route
   root "site#index"
+
+  # candles routes
+  get "candles", to:"candles#index"
+  get "candles/:id", to:"candles#show"
+  post "candles", to:"candles#create"
+  delete "candles/:id", to:"candles#delete"
+  put "candles/:id", to:"candles#update"
 
 end
