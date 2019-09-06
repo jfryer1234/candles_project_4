@@ -1,9 +1,11 @@
 import React from "react"
 
+import Main from "./Main.js"
+
 class App extends React.Component {
   render () {
     return (
-      <h1>Candle deLight</h1>
+      <div><Main /></div>
     )
   }
 }
