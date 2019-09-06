@@ -58,6 +58,7 @@
     width: 95%;
   }
 
+
 /* ==================
 | | BROWSER VIEW
 ================== */
@@ -68,15 +69,15 @@
   }
 
   .form-div {
-    width: 47%;
+    width: 500px;
   }
 
-  .render-div {
-    width: 47%;
-  }
+  /* .render-div {
+    width
+  } */
 
   .mobile-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
