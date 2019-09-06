@@ -3,6 +3,8 @@
 ## Candle Delights
 ## Find Your Perfect Match
 
+An app to create and save your candle creations.
+
 Things you may want to cover:
 
 * Ruby version
