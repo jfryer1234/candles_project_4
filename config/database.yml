@@ -9,8 +9,8 @@ development:
   encoding: unicode
   database: candle-delight_development
   pool: 5
-  username: julie
-  password: 
+  username: becka
+  password:
   timeout: 5000
 
 
@@ -22,6 +22,6 @@ test:
   encoding: unicode
   database: candle-delight_development
   pool: 5
-  username: julie
+  username: becka
   password:
   timeout: 5000
