@@ -62,7 +62,29 @@ class Candle
   end
 
   # delete
+  def self.delete(id)
+    results = DB.exec("DELETE FROM candles WHERE id=#{id};")
+    return { "deleted" => true }
+  end
 
   # update
+  def self.update(id, candle)
+    results = DB.exec(
+      <<-SQL
+        UPDATE candles
+        SET scent_1='#{candle["scent_1"]}', scent_2='#{candle["scent_2"]}', embellishment='#{candle["embellishment"]}', color='#{candle["color"]}', packaging='#{candle["packaging"]}'
+        WHERE id=#{id}
+        RETURNING id, scent_1, scent_2, embellishment, color, packaging;
+      SQL
+    )
+    return {
+      "id" => results.first["id"],
+      "scent_1" => results.first["scent_1"],
+      "scent_2" => results.first["scent_2"],
+      "embellishment" => results.first["embellishment"],
+      "color" => results.first["color"],
+      "packaging" => results.first["packaging"]
+    }
+  end
 
 end
