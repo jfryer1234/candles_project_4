@@ -7,6 +7,12 @@ class Update extends React.Component {
   constructor() {
     super()
     this.state = {
+      scent_1: '',
+      scent_2: '',
+      embellishment: '',
+      color: '',
+      packaging: '',
+      id: null
     }
   }
   handleChange = (e) => {
@@ -19,13 +25,23 @@ class Update extends React.Component {
     e.preventDefault()
     this.props.handleUpdate(this.state)
   }
+  componentDidMount () {
+      this.setState({
+        scent_1: this.props.formInputs.scent_1,
+        scent_2: this.props.formInputs.scent_2,
+        embellishment: this.props.formInputs.embellishment,
+        color: this.props.formInputs.color,
+        packaging: this.props.formInputs.packaging,
+        id: this.props.formInputs.id
+      })
+  }
   render () {
     return (
       <div className="form-div">
         <div>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="scent_1">Scent 1:</label>
-            <select name="scent_1" id="scent_1" value={this.props.formInputs.scent_1} onChange={this.handleChange}>
+            <select name="scent_1" id="scent_1" value={this.state.scent_1} onChange={this.handleChange}>
               <option value="no_scent">Unscented</option>
               <option value="cinnamon">Cinnamon</option>
               <option value="citrus">Citrus</option>
@@ -40,7 +56,7 @@ class Update extends React.Component {
               <option value="vanilla">Vanilla</option>
             </select>
             <label htmlFor="scent_2">Scent 2:</label>
-            <select name="scent_2" id="scent_2" value={this.props.formInputs.scent_2} onChange={this.handleChange}>
+            <select name="scent_2" id="scent_2" value={this.state.scent_2} onChange={this.handleChange}>
               <option value="no_scent">Unscented</option>
               <option value="cinnamon">Cinnamon</option>
               <option value="citrus">Citrus</option>
@@ -62,7 +78,7 @@ class Update extends React.Component {
               <option value="sea_salt">Sea Salt</option>
             </select>
             <label htmlFor="color">color</label>
-            <select name="color" id="color" value={this.props.formInputs.color} onChange={this.handleChange}>
+            <select name="color" id="color" value={this.state.color} onChange={this.handleChange}>
               <option value="white">Ghost White</option>
               <option value="red">Scarlet Red</option>
               <option value="orange">Sunset Orange</option>
@@ -76,7 +92,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="taper"
-                     checked={this.state.packaging === "taper"}
+                     defaultChecked={this.state.packaging === "taper"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/taper-white.png"
@@ -87,7 +103,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="glass_jar"
-                     checked={this.state.packaging === "glass_jar"}
+                     defaultChecked={this.state.packaging === "glass_jar"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/jar-white.png"
@@ -98,7 +114,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="pillar"
-                     checked={this.state.packaging === "pillar"}
+                     defaultChecked={this.state.packaging === "pillar"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/pillar-white.png"
@@ -109,7 +125,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="three_wick"
-                     checked={this.state.packaging === "three_wick"}
+                     defaultChecked={this.state.packaging === "three_wick"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/3wick-white.png"
