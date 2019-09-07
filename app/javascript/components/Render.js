@@ -38,7 +38,7 @@ class Render extends React.Component {
       <h4>Packaging: {this.props.candleData.packaging}</h4>
       </div>
       <button type="button" onClick={() => {this.props.handleDelete(this.props.candleData.id)}}>Delete</button>
-      <button type="button" onClick={() => {this.props.handleView("edit")}}>Edit</button>
+      <button type="button" onClick={() => {this.props.handleView("edit", this.props.candleData)}}>Edit</button>
       </div>
 
     )
