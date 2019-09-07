@@ -57,6 +57,21 @@ handleDelete = (id) => {
   })
   .catch(err => console.log(err))
 }
+handleUpdate = (updateCandle) => {
+  fetch(`/api/candles/${updateCandle.id}`, {
+    body: JSON.stringify(updateCandle),
+    method: 'PUT',
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    }
+  })
+  .then(updatedCandle => {
+    this.props.handleView('home')
+    this.fetchCandles()
+  })
+  .catch(err => console.log(err))
+}
 
 
 //life cycles
@@ -72,7 +87,11 @@ componentDidMount() {
         { this.props.view.page === "home" ?
           <Create
           handleCreate={this.handleCreate}
-          /> : <Update />}
+          />
+         : <Update
+          formInputs={this.props.formInputs}
+          handleUpdate={this.handleUpdate}
+          />}
         </div>
         <div>
           {this.state.candles.map((candleData) => (
