@@ -1,8 +1,9 @@
-//packages
+// PACKAGES
 import React from "react"
 
-//comp class
+// CLASS COMPONENT
 class Header extends React.Component {
+  // RENDER
   render () {
     return (
       <header>
@@ -13,5 +14,5 @@ class Header extends React.Component {
   }
 }
 
-//export
+// EXPORT
 export default Header

@@ -1,8 +1,9 @@
-//packages
+// PACKAGES
 import React from "react"
 
-//component class
+// CLASS COMPONENT
 class Create extends React.Component {
+  // STATE
   constructor() {
     super()
     this.state = {
@@ -14,6 +15,7 @@ class Create extends React.Component {
       id: null
     }
   }
+  // HANDLERS
   handleChange = (e) => {
     this.setState({[e.target.id] : e.target.value})
   }
@@ -24,6 +26,7 @@ class Create extends React.Component {
     e.preventDefault()
     this.props.handleCreate(this.state)
   }
+  // RENDER
   render () {
     return (
       <div className="form-div">
@@ -131,5 +134,5 @@ class Create extends React.Component {
   }
 }
 
-//export
+// EXPORT
 export default Create

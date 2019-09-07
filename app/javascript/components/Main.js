@@ -1,83 +1,89 @@
-//packages
+// PACKAGES
 import React from "react"
 
+// DEPENDENCIES
 import Create from "./Create.js"
 import Render from "./Render.js"
 import Update from "./Update.js"
 
-//comp class
+// CLASS COMPONENT
 class Main extends React.Component {
+  // STATE
   constructor(props) {
-  super(props)
-  this.state = {
-    candles: []
+    super(props)
+    this.state = {
+      candles: []
+    }
   }
-}
-//handlers
-fetchCandles = () => {
-  fetch('/api/candles')
-  .then(data=> data.json())
-  .then(jData => {
-    this.setState({ candles: jData })
-  })
-}
-handleCreate = (createData) => {
-  fetch('api/candles', {
-    body: JSON.stringify(createData),
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(createdCandle => {
-    return createdCandle.json()
-  })
-  .then(jsonedCandle => {
-    this.setState(prevState => {
-      prevState.candles.push(jsonedCandle)
-      return { candles: prevState.candles }
+  // HANDLERS
+  // api call that requests and stores all candles in the database
+  fetchCandles = () => {
+    fetch('/api/candles')
+    .then(data=> data.json())
+    .then(jData => {
+      this.setState({ candles: jData })
     })
-  })
-  .catch(err => console.log(err))
-}
-handleDelete = (id) => {
-  fetch(`/api/candles/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(json => {
-    this.setState(prevState=> {
-      const candles = prevState.candles.filter( candle => candle.id !== id)
-      return { candles}
-    })
-  })
-  .catch(err => console.log(err))
-}
-handleUpdate = (updateCandle) => {
-  fetch(`/api/candles/${updateCandle.id}`, {
-    body: JSON.stringify(updateCandle),
-    method: 'PUT',
-    headers: {
+  }
+  // api call that creates new candles
+  handleCreate = (createData) => {
+    fetch('api/candles', {
+      body: JSON.stringify(createData),
+      method: 'POST',
+      headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
-    }
-  })
-  .then(updatedCandle => {
-    this.props.handleView('home')
+      }
+    })
+    .then(createdCandle => {
+      return createdCandle.json()
+    })
+    .then(jsonedCandle => {
+      this.setState(prevState => {
+        prevState.candles.push(jsonedCandle)
+        return { candles: prevState.candles }
+      })
+    })
+    .catch(err => console.log(err))
+  }
+  // api call that deletes a candle
+  handleDelete = (id) => {
+    fetch(`/api/candles/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(json => {
+      this.setState(prevState=> {
+        const candles = prevState.candles.filter( candle => candle.id !== id)
+        return { candles}
+      })
+    })
+    .catch(err => console.log(err))
+  }
+  // api call that updates an already existing candle
+  handleUpdate = (updateCandle) => {
+    fetch(`/api/candles/${updateCandle.id}`, {
+      body: JSON.stringify(updateCandle),
+      method: 'PUT',
+      headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+      }
+    })
+    .then(updatedCandle => {
+      this.props.handleView('home')
+      this.fetchCandles()
+    })
+    .catch(err => console.log(err))
+  }
+  // LIFE CYCLE
+  // on page load, requests and saves all data from the candle database
+  componentDidMount() {
     this.fetchCandles()
-  })
-  .catch(err => console.log(err))
-}
-
-
-//life cycles
-componentDidMount() {
-  this.fetchCandles()
-}
+  }
+  // RENDER
   render () {
     return (
       <div>
@@ -109,5 +115,5 @@ componentDidMount() {
   }
 }
 
-//export
+// EXPORT
 export default Main

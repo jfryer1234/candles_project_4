@@ -1,9 +1,13 @@
+// PACKAGES
 import React from "react"
 
+// DEPENDENCIES
 import Main from "./Main.js"
 import Header from "./Header.js"
 
+// CLASS COMPONENT
 class App extends React.Component {
+  // STATE
   constructor(props) {
     super(props)
     this.state = {
@@ -21,6 +25,7 @@ class App extends React.Component {
       }
     }
   }
+  // HANDLERS
   handleView = (view, candleData) => {
     let pageTitle = ''
     let formInputs = {
@@ -57,6 +62,7 @@ class App extends React.Component {
       formInputs: formInputs
     })
   }
+  // RENDER
   render () {
     return (
       <div>
@@ -70,4 +76,5 @@ class App extends React.Component {
   }
 }
 
+// EXPORT
 export default App

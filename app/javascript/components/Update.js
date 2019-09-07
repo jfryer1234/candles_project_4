@@ -1,9 +1,9 @@
-//packages
+// PACKAGES
 import React from "react"
 
-
-//component class
+// CLASS COMPONENT
 class Update extends React.Component {
+  // STATE
   constructor() {
     super()
     this.state = {
@@ -15,6 +15,7 @@ class Update extends React.Component {
       id: null
     }
   }
+  // HANDLERS
   handleChange = (e) => {
     this.setState({[e.target.id] : e.target.value})
   }
@@ -25,16 +26,18 @@ class Update extends React.Component {
     e.preventDefault()
     this.props.handleUpdate(this.state)
   }
+  // LIFE CYCLE
   componentDidMount () {
-      this.setState({
-        scent_1: this.props.formInputs.scent_1,
-        scent_2: this.props.formInputs.scent_2,
-        embellishment: this.props.formInputs.embellishment,
-        color: this.props.formInputs.color,
-        packaging: this.props.formInputs.packaging,
-        id: this.props.formInputs.id
-      })
+    this.setState({
+      scent_1: this.props.formInputs.scent_1,
+      scent_2: this.props.formInputs.scent_2,
+      embellishment: this.props.formInputs.embellishment,
+      color: this.props.formInputs.color,
+      packaging: this.props.formInputs.packaging,
+      id: this.props.formInputs.id
+    })
   }
+  // RENDER
   render () {
     return (
       <div className="form-div">
@@ -142,4 +145,5 @@ class Update extends React.Component {
   }
 }
 
+// EXPORT
 export default Update

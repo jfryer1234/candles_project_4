@@ -1,8 +1,12 @@
-//packages
+// PACKAGES
 import React from "react"
+
+// DEPENDENCIES
 import Update from "./Update.js"
-//comp class
+
+// CLASS COMPONENT
 class Render extends React.Component {
+  // STATE
   // constructor(props) {
   //   super(props)
   //   this.state = {
@@ -10,6 +14,7 @@ class Render extends React.Component {
   //     packaging: ""
   //   }
   // }
+  // HANDLERS
   // transformData (cdPackaging) {
   //   let packaging = ""
   //   switch (cdPackaging) {
@@ -27,6 +32,7 @@ class Render extends React.Component {
   //     packaging: packaging
   //   })
   // }
+  // RENDER
   render () {
     return (
       <div className="render-div">
@@ -45,5 +51,5 @@ class Render extends React.Component {
   }
 }
 
-//export
+// EXPORT
 export default Render
