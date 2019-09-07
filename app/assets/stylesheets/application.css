@@ -74,6 +74,11 @@
     content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
   }
 
+  .thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+
 
   /* ==== RENDERED LIST ==== */
 
@@ -81,7 +86,6 @@
     text-align: center;
     width: 95%;
   }
-
 
 /* ==================
 | | BROWSER VIEW

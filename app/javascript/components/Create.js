@@ -17,6 +17,9 @@ class Create extends React.Component {
   handleChange = (e) => {
     this.setState({[e.target.id] : e.target.value})
   }
+  handleRadioButton = (e) => {
+    this.setState({packaging : e.target.value})
+  }
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleCreate(this.state)
@@ -76,10 +79,50 @@ class Create extends React.Component {
               <option value="tan">Tuscan Sand</option>
             </select>
             <div className="radio-buttons">
-              <input type="radio" name="package" value="taper" /><img src="https://placehold.it/100x100.png" alt="taper" onClick={this.handleChange}/><br />
-              <input type="radio" name="package" value="glass_jar" /><img src="https://placehold.it/100x100.png" alt="glass_jar" onClick={this.handleChange}/><br />
-              <input type="radio" name="package" value="pillar" /><img src="https://placehold.it/100x100.png" alt="pillar" onClick={this.handleChange}/><br />
-              <input type="radio" name="package" value="three_wick" /><img src="https://placehold.it/100x100.png" alt="three_wick" onClick={this.handleChange}/><br />
+              <input type="radio"
+                     name="packaging"
+                     value="taper"
+                     checked={this.state.packaging === "taper"}
+                     onChange={this.handleRadioButton}
+              />
+              <img src="/images/taper-white.png"
+                   className="thumbnail"
+                   alt="taper"
+              />
+              <br />
+              <input type="radio"
+                     name="packaging"
+                     value="glass_jar"
+                     checked={this.state.packaging === "glass_jar"}
+                     onChange={this.handleRadioButton}
+              />
+              <img src="/images/jar-white.png"
+                   className="thumbnail"
+                   alt="glass_jar"
+              />
+              <br />
+              <input type="radio"
+                     name="packaging"
+                     value="pillar"
+                     checked={this.state.packaging === "pillar"}
+                     onChange={this.handleRadioButton}
+              />
+              <img src="/images/pillar-white.png"
+                   className="thumbnail"
+                   alt="pillar"
+              />
+              <br />
+              <input type="radio"
+                     name="packaging"
+                     value="three_wick"
+                     checked={this.state.packaging === "three_wick"}
+                     onChange={this.handleRadioButton}
+              />
+              <img src="/images/3wick-white.png"
+                   className="thumbnail"
+                   alt="three_wick"
+              />
+              <br />
             </div>
             <input type="submit" />
           </form>
