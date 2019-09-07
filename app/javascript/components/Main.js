@@ -2,8 +2,8 @@
 import React from "react"
 
 import Create from "./Create.js"
-import Header from "./Header.js"
 import Render from "./Render.js"
+import Update from "./Update.js"
 
 //comp class
 class Main extends React.Component {
@@ -58,6 +58,7 @@ handleDelete = (id) => {
   .catch(err => console.log(err))
 }
 
+
 //life cycles
 componentDidMount() {
   this.fetchCandles()
@@ -65,12 +66,13 @@ componentDidMount() {
   render () {
     return (
       <div>
-        <Header />
         <div className="mobile-flex">
         <div>
+        <h1 className="align-center">{this.props.view.pageTitle}</h1>
+        { this.props.view.page === "home" ?
           <Create
           handleCreate={this.handleCreate}
-          />
+          /> : <Update />}
         </div>
         <div>
           {this.state.candles.map((candleData) => (
@@ -78,6 +80,7 @@ componentDidMount() {
             key={candleData.id}
             candleData={candleData}
             handleDelete={this.handleDelete}
+            handleView={this.props.handleView}
             />
           ))}
         </div>
