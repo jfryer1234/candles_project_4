@@ -6,11 +6,11 @@ class Create extends React.Component {
   constructor() {
     super()
     this.state = {
-      scent_1: '',
-      scent_2: '',
-      embellishment: '',
-      color: '',
-      packaging: '',
+      scent_1: 'no_scent',
+      scent_2: 'no_scent',
+      embellishment: 'none',
+      color: 'white',
+      packaging: 'taper',
       id: null
     }
   }
