@@ -1,6 +1,6 @@
 //packages
 import React from "react"
-
+import Update from "./Update.js"
 //comp class
 class Render extends React.Component {
   // constructor(props) {
@@ -37,7 +37,8 @@ class Render extends React.Component {
       <h4>Color: {this.props.candleData.color}</h4>
       <h4>Packaging: {this.props.candleData.packaging}</h4>
       </div>
-      <h3 onClick={() => {this.props.handleDelete(this.props.candleData.id)}}>Delete</h3>
+      <button type="button" onClick={() => {this.props.handleDelete(this.props.candleData.id)}}>Delete</button>
+      <button type="button" onClick={() => {this.props.handleView("edit")}}>Edit</button>
       </div>
 
     )

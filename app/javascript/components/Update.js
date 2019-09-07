@@ -1,28 +1,13 @@
 //packages
 import React from "react"
 
+
 //component class
-class Create extends React.Component {
+class Update extends React.Component {
   constructor() {
     super()
     this.state = {
-      scent_1: 'no_scent',
-      scent_2: 'no_scent',
-      embellishment: 'none',
-      color: 'white',
-      packaging: 'taper',
-      id: null
     }
-  }
-  handleChange = (e) => {
-    this.setState({[e.target.id] : e.target.value})
-  }
-  handleRadioButton = (e) => {
-    this.setState({packaging : e.target.value})
-  }
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.handleCreate(this.state)
   }
   render () {
     return (
@@ -131,5 +116,4 @@ class Create extends React.Component {
   }
 }
 
-//export
-export default Create
+export default Update

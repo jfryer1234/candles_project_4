@@ -6,7 +6,7 @@ class Header extends React.Component {
   render () {
     return (
       <header>
-        <h1>Candle deLight</h1>
+        <h1 onClick={() => {this.props.handleView("home")}}>Candle deLight</h1>
         <h2>find your perfect match</h2>
       </header>
     )
