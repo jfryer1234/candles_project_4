@@ -6,8 +6,16 @@ class Render extends React.Component {
   render () {
     return (
       <div className="render-div">
-        <h1>Render component</h1>
+      <div className="block-div">
+      {this.props.candleData.scent_1}
+      {this.props.candleData.scent_2}
+      {this.props.candleData.embellishment}
+      {this.props.candleData.color}
+      {this.props.candleData.packaging}
       </div>
+      <h3 onClick={() => {this.props.handleDelete(this.props.candleData.id)}}>Delete</h3>
+      </div>
+
     )
   }
 }

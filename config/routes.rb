@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root "site#index"
 
   # candles routes
-  get "candles", to:"candles#index"
-  get "candles/:id", to:"candles#show"
-  post "candles", to:"candles#create"
-  delete "candles/:id", to:"candles#delete"
-  put "candles/:id", to:"candles#update"
+  get "api/candles", to:"candles#index"
+  get "api/candles/:id", to:"candles#show"
+  post "api/candles", to:"candles#create"
+  delete "api/candles/:id", to:"candles#delete"
+  put "api/candles/:id", to:"candles#update"
 
 end

@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ /* ==================
+ | | Imported Fonts
+ ================== */
+ @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+ @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 
 /* ==================
 | | MOBILE VIEW
@@ -24,6 +29,8 @@
 
   body {
     background-color: lightgreen;
+    font-family: 'Noto Sans TC', sans-serif;
+
   }
 
   /* ==== CREATE FORM ==== */
@@ -50,6 +57,23 @@
     margin: 0 auto;
     text-align: center;
   }
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    font-family: 'Satistfy', cursive;
+    text-align: center;
+    margin-left: 200px;
+  }
+  h2::after {
+    display: block;
+    transform: scale(.1);
+    position: fixed;
+    left: 50%;
+    top: -20%;
+    content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
+  }
+
 
   /* ==== RENDERED LIST ==== */
 
@@ -58,6 +82,7 @@
     width: 95%;
   }
 
+
 /* ==================
 | | BROWSER VIEW
 ================== */
@@ -65,18 +90,43 @@
 @media only screen and (min-width: 600px) {
   body {
     background-color: lightblue;
+    font-family: 'Noto Sans TC', sans-serif;
+
   }
 
   .form-div {
-    width: 47%;
+    width: 500px;
   }
 
-  .render-div {
-    width: 47%;
-  }
+  /* .render-div {
+    width
+  } */
 
   .mobile-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
+
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    font-family: 'Satistfy', cursive;
+    text-align: center;
+    margin-left: 200px;
+    /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
+    background-repeat: no-repeat;
+    background-position: 620px 0;
+    background-size: contain; */
+  }
+  h2::after {
+    display: block;
+    transform: scale(.1);
+    position: fixed;
+    left: 50%;
+    top: -20%;
+    content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
+  }
+
+
 }

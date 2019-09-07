@@ -3,14 +3,32 @@ import React from "react"
 
 //component class
 class Create extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      scent_1: '',
+      scent_2: '',
+      embellishment: '',
+      color: '',
+      packaging: '',
+      id: null
+    }
+  }
+  handleChange = (e) => {
+    this.setState({[e.target.id] : e.target.value})
+  }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleCreate(this.state)
+  }
   render () {
     return (
       <div className="form-div">
         <h1 className="align-center">create form</h1>
         <div>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label htmlFor="scent_1">Scent 1:</label>
-            <select name="scent_1" id="scent_1">
+            <select name="scent_1" id="scent_1" onChange={this.handleChange}>
               <option value="no_scent">Unscented</option>
               <option value="cinnamon">Cinnamon</option>
               <option value="citrus">Citrus</option>
@@ -25,7 +43,7 @@ class Create extends React.Component {
               <option value="vanilla">Vanilla</option>
             </select>
             <label htmlFor="scent_2">Scent 2:</label>
-            <select name="scent_2" id="scent_2">
+            <select name="scent_2" id="scent_2" onChange={this.handleChange}>
               <option value="no_scent">Unscented</option>
               <option value="cinnamon">Cinnamon</option>
               <option value="citrus">Citrus</option>
@@ -40,14 +58,14 @@ class Create extends React.Component {
               <option value="vanilla">Vanilla</option>
             </select>
             <label htmlFor="embellishment">embellishment</label>
-            <select name="embellishment" id="embellishment">
+            <select name="embellishment" id="embellishment" onChange={this.handleChange}>
               <option value="none">None</option>
               <option value="extra_bubbles">Extra Air Bubbles (for crackling)</option>
               <option value="rose_petals">Rose Petals</option>
               <option value="sea_salt">Sea Salt</option>
             </select>
             <label htmlFor="color">color</label>
-            <select name="color" id="color">
+            <select name="color" id="color" onChange={this.handleChange}>
               <option value="white">Ghost White</option>
               <option value="red">Scarlet Red</option>
               <option value="orange">Sunset Orange</option>
@@ -58,10 +76,10 @@ class Create extends React.Component {
               <option value="tan">Tuscan Sand</option>
             </select>
             <div className="radio-buttons">
-              <input type="radio" name="package" value="taper" /><img src="https://placehold.it/100x100.png" alt="taper" /><br />
-              <input type="radio" name="package" value="glass_jar" /><img src="https://placehold.it/100x100.png" alt="glass_jar" /><br />
-              <input type="radio" name="package" value="pillar" /><img src="https://placehold.it/100x100.png" alt="pillar" /><br />
-              <input type="radio" name="package" value="three_wick" /><img src="https://placehold.it/100x100.png" alt="three_wick" /><br />
+              <input type="radio" name="package" value="taper" /><img src="https://placehold.it/100x100.png" alt="taper" onClick={this.handleChange}/><br />
+              <input type="radio" name="package" value="glass_jar" /><img src="https://placehold.it/100x100.png" alt="glass_jar" onClick={this.handleChange}/><br />
+              <input type="radio" name="package" value="pillar" /><img src="https://placehold.it/100x100.png" alt="pillar" onClick={this.handleChange}/><br />
+              <input type="radio" name="package" value="three_wick" /><img src="https://placehold.it/100x100.png" alt="three_wick" onClick={this.handleChange}/><br />
             </div>
             <input type="submit" />
           </form>
