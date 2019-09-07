@@ -1,27 +1,15 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- /* ==================
- | | Imported Fonts
- ================== */
+/* ==================
+| | Imported Fonts
+================== */
+
  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
  @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 
 /* ==================
 | | MOBILE VIEW
 ================== */
+
+  /* ==== GENERAL ==== */
 
   * {
     border: 1px solid gold;
@@ -30,41 +18,29 @@
   body {
     background-color: lightgreen;
     font-family: 'Noto Sans TC', sans-serif;
-
-  }
-
-  /* ==== CREATE FORM ==== */
-
-  .form-div {
-    width: 95%;
-  }
-
-  .form-div input {
-    width: 100%;
-  }
-
-  .form-div select {
-    width: 100%;
-  }
-
-  .radio-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .align-center {
     margin: 0 auto;
     text-align: center;
   }
+
+  /* ==== HEADER ==== */
+
   h1 {
     text-align: center;
   }
+
   h2 {
     font-family: 'Satistfy', cursive;
     text-align: center;
     margin-left: 200px;
+    /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
+    background-repeat: no-repeat;
+    background-position: 620px 0;
+    background-size: contain; */
   }
+
   h2::after {
     display: block;
     transform: scale(.1);
@@ -74,11 +50,28 @@
     content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
   }
 
+  /* ==== CREATE FORM ==== */
+
+  .form-div {
+    width: 95%;
+  }
+    .form-div input {
+      width: 100%;
+    }
+    .form-div select {
+      width: 100%;
+    }
+
+  .radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .thumbnail {
     width: 100px;
     height: 100px;
   }
-
 
   /* ==== RENDERED LIST ==== */
 
@@ -92,45 +85,23 @@
 ================== */
 
 @media only screen and (min-width: 600px) {
+
+  /* ==== GENERAL ==== */
+
   body {
     background-color: lightblue;
     font-family: 'Noto Sans TC', sans-serif;
-
   }
+
+  /* ==== CREATE FORM ==== */
 
   .form-div {
     width: 500px;
   }
 
-  /* .render-div {
-    width
-  } */
-
   .mobile-flex {
     display: flex;
     justify-content: space-around;
   }
-
-  h1 {
-    text-align: center;
-  }
-  h2 {
-    font-family: 'Satistfy', cursive;
-    text-align: center;
-    margin-left: 200px;
-    /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
-    background-repeat: no-repeat;
-    background-position: 620px 0;
-    background-size: contain; */
-  }
-  h2::after {
-    display: block;
-    transform: scale(.1);
-    position: fixed;
-    left: 50%;
-    top: -20%;
-    content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
-  }
-
-
+  
 }
