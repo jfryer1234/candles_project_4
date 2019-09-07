@@ -65,7 +65,7 @@ class App extends React.Component {
   // RENDER
   render () {
     return (
-      <div>
+      <div className="container">
         <Header handleView={this.handleView} />
         <Main handleView={this.handleView}
         view={this.state.view}
