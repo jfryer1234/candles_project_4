@@ -11,10 +11,10 @@
  | | Variables
  ================== */
  :root {
-   --darkest: #7F0E1F;
-   --darker: #806377;
-   --medium: #FBDDEB;
-   --lighter: #D6BEBE;
+   --darkest: #336699;
+   --darker: #DCD6F7;
+   --medium: #A6B1E1;
+   --lighter: #CACFD6;
    --lightest: #B4BAC6;
  }
 
@@ -30,7 +30,7 @@
 
   body {
     margin: 0;
-    background-color: var(--lightest);
+    background-color: var(--darker);
     color: var(--darkest);
     /* font-family: 'Noto Sans TC', sans-serif; */
     font-family: 'Manjari', sans-serif;
@@ -52,8 +52,8 @@
   /* ==== HEADER ==== */
 
   header {
-    background-color: var(--lightest);
-    color: black;
+    background-color: var(--darkest);
+    color: var(--darker);
   }
   h1 {
     font-family: 'Satistfy', cursive;
@@ -89,7 +89,7 @@
     border-radius: 5px; */
     margin: 0 auto;
     width: 95%;
-    background-color: var(--lighter);
+    background-color: var(--medium);
     padding: 10px;
   }
     .form-div input {
@@ -126,7 +126,7 @@
   .render-div {
     /* border: 1px solid var(--darkest);
     border-radius: 5px; */
-    background-color: var(--lighter);
+    background-color: var(--medium);
     margin: 0 auto;
     text-align: center;
     width: 95%;
