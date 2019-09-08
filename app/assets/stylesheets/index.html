@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MyApp">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+		<script src="app.js" charset="utf-8"></script>
+		<script src="map.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/skeleton.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<title>Trusty Townies</title>
+    </head>
+    <body>
+		<div class="container" ng-controller="AppController as ctrl">
+			<nav>
+        		<div ng-hide="ctrl.loggedInUsername">
+	            <!-- LOGIN -->
+	            	<h3 ng-click="login={'display':'block'}" class="actions">LOGIN</h3>
+	            <!-- login modal -->
+					<div id="loginModal" class="modal" ng-style="login">
+	                    <div class="modal-content">
+							<div class="modal-body">
+                                <h3>LOGIN</h3>
+								<form ng-submit="ctrl.logIn()">
+				                    <input type="text" ng-model="ctrl.username" placeholder="username">
+				                    <input type="password" ng-model="ctrl.password" placeholder="password">
+				                    <input type="submit" value="LOG IN" ng-click="login={}" class="submit">
+				                </form>
+                            </div>
+                            <div class="modal-footer">
+							<button ng-click="login={}" class="close">X</button>
+							</div>
+                        </div>
+                    </div>
+								<!-- CREATE USER -->
+                    <h3 ng-click="create={'display':'block'}" class="actions">SIGN UP</h3>
+                    <div id="createModal" class="modal" ng-style="create">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3>SIGN UP</h3>
+								<form ng-submit="ctrl.createUser()">
+					                <input type="text" ng-model="ctrl.newUsername" placeholder="username">
+					                <input type="text" ng-model="ctrl.newPassword" placeholder="password">
+					                <input type="submit" class="submit" value="SIGN UP" ng-click="create={}">
+					            </form>
+							</div>
+                            <div class="modal-footer">
+                            	<button ng-click="create={}" class="close">X</button>
+                            </div>
+                        </div>
+					</div>
+	            </div>
+	            <!-- LOGOUT -->
+				<div ng-show="ctrl.loggedInUsername">
+                    <h3 class="greeting">HELLO, {{ctrl.loggedInUsername}}!</h3>
+                    <h3 ng-click="ctrl.logOut()" class="actions">LOG OUT</h3>
+				</div>
+	        </nav>
+	        <div class="main">
+	            <div class="title">
+	                <h1 class="text-focus-in">Trusty Townies</h1>
+	                <!-- <img src="../images/icons8-maintenance-60.png" alt=""> -->
+	            </div>
+              <div class="mainimg"></div>
+             <div class="mainboxes" ng-hide="ctrl.loggedInUsername">
+                 <div class="box1">
+                     <h1>FIND A <br>TOWNIE</h1>
+                     <p>Need help? Find a local near you to do the job! Search through hundreds of locals in your area that specialize in what you need.</p>
+                 </div>
+                 <div class="box2" >
+                     <h1>ADD A<br>TOWNIE</h1>
+                     <p>Add new locals to the list to tell others about. Add your favorite local helpers to promote their business and get your neighbors the help they need!</p>
+                 </div>
+                 <div class="box3">
+                     <h1>CREATE <br> REVIEWS</h1>
+                     <p>With Trusty townies, you can endorse your favorite businnesses, and help others sort through to the most recommended one. Trusty TOwnies makes it easy to find the best quality business for the job you need!</p>
+                 </div>
+             </div>
+         </div>
+        <!-- AFTER LOGIN -->
+		    <div id="main-townie-display" ng-show="ctrl.loggedInUsername">
+          <div class="mainbtns">
+                  <button type="button" ng-style="find" ng-click="ctrl.changeInclude('findtownie'); ctrl.findatownie = true; find={'color':'white','border':'white 1px solid'}; add={'color':'#40454d','border':'#40454d 1px solid'}; ctrl.showMap = false" name="button">Find A Townie</button>
+
+                    <button type="button" ng-style="add" ng-click="ctrl.changeInclude('addtownie'); ctrl.findatownie = false; add={'color':'white','border':'white 1px solid'}; find={'color':'#40454d','border':'#40454d 1px solid'}; ctrl.showMap = false" name="button">Create A Townie</button>
+            </div>
+	        	<!-- <div ng-hide="ctrl.isCompanySelected"> -->
+					<!-- <h4>Know a Townie you Trust?</h4> -->
+					<div ng-include="ctrl.includePath">
+
+					</div>
+
+	        <div class="container" ng-show="ctrl.showMap">
+            <div id="map-search-panel">
+            <b> Your Address: </b>
+            <input type="text" id="start" value="{{ctrl.companyToShow.city}}">
+            <input type="hidden" id="end" value="{{ctrl.companyToShow.streetAddress + ctrl.companyToShow.city + ctrl.companyToShow.state}}">
+            <button id="directions-btn">Get Directions</button>
+            </div>
+            <div id="map-directions-display">
+				<div class="mapcontainer">
+					<div id="map"></div>
+					<div id="right-panel"></div>
+				</div>
+	            <button id="close-map-btn">Close Map</button>
+            </div>
+		  	</div>
+
+			</div>
+        </div>
+		<div class="footer">
+	        &copy; Copyright 2019 All Rights Reserved
+	    </div>
+<!-- Used Gooogle Tutorial, esp. on https://developers.google.com/maps/documentation/javascript/examples/directions-panel -->
+<script>
+  function initMap() {
+    const directionsService = new google.maps.DirectionsService;
+    const directionsRenderer = new google.maps.DirectionsRenderer;
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 7,
+      center: {lat: 41.85, lng: -87.65}
+    });
+    directionsRenderer.setMap(map);
+    directionsRenderer.setPanel(document.getElementById('right-panel'));
+    const onChangeHandler = function() {
+      calculateAndDisplayRoute(directionsService, directionsRenderer);
+      document.getElementById("map-directions-display").style.display = "flex";
+      document.getElementById('close-map-btn').addEventListener('click',() => {
+        document.getElementById('map-directions-display').style.display = "none";
+      })
+    };
+    document.getElementById("directions-btn").removeEventListener("click", initMap);
+    document.getElementById('directions-btn').addEventListener('click', onChangeHandler);
+    onChangeHandler();
+    }
+  function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+    directionsService.route(
+      {
+        origin: {query: document.getElementById('start').value},
+        destination: {query: document.getElementById('end').value},
+        travelMode: 'DRIVING'
+      },
+      function(response, status) {
+        if (status === 'OK') {
+          directionsRenderer.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+  }
+  document.getElementById('directions-btn').addEventListener('click', initMap);
+</script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-99aWDom_qs9Pfq5tS3ay3nBIa4kHyew" async defer></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-99aWDom_qs9Pfq5tS3ay3nBIa4kHyew&libraries=places"></script>
+
+	</body>
+</html>

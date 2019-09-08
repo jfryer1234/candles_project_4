@@ -100,6 +100,7 @@ class Main extends React.Component {
           />}
         </div>
         <div className="scroll">
+        <h2 className="align-center">your candles</h2>
           {this.state.candles.map((candleData) => (
             <Render
             key={candleData.id}

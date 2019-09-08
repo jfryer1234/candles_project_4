@@ -12,11 +12,18 @@ class Footer extends React.Component {
             <a href="https://www.linkedin.com/in/julie-fryer/" target="_blank"><ion-icon name="logo-linkedin" size="large"></ion-icon></a>
             <a href="https://github.com/jfryer1234/" target="_blank"><ion-icon name="logo-github" size="large"></ion-icon></a>
           </div>
+          <div className="align-center">
+            <div className="footer-links2">
+            <div>
+              <h5>j. fryer</h5>
+            </div>
+            <div>
+              <h5>r. catanzaro</h5>
+            </div>
+            </div>
           <div>
-            <h5>j. fryer</h5>
+            <h4>2019</h4>
           </div>
-          <div>
-            <h5>r. catanzaro</h5>
           </div>
           <div>
             <a href="https://github.com/caducus/" target="_blank"><ion-icon name="logo-github" size="large"></ion-icon></a>
