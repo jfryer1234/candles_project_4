@@ -6,18 +6,32 @@
  @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
  @import url('https://fonts.googleapis.com/css?family=Manjari|Satisfy&display=swap');
 
+
+ /* ==================
+ | | Variables
+ ================== */
+ :root {
+   --darkest: #7F0E1F;
+   --darker: #806377;
+   --medium: #FBDDEB;
+   --lighter: #D6BEBE;
+   --lightest: #B4BAC6;
+ }
+
 /* ==================
 | | MOBILE VIEW
 ================== */
 
   /* ==== GENERAL ==== */
 
-  * {
+  /* * {
     border: 1px solid gold;
-  }
+  } */
 
   body {
-    background-color: lightgreen;
+    margin: 0;
+    background-color: var(--lightest);
+    color: var(--darkest);
     /* font-family: 'Noto Sans TC', sans-serif; */
     font-family: 'Manjari', sans-serif;
   }
@@ -30,10 +44,17 @@
   .align-center {
     margin: 0 auto;
     text-align: center;
+    font-family: 'Satistfy', cursive;
+
+
   }
 
   /* ==== HEADER ==== */
 
+  header {
+    background-color: var(--lightest);
+    color: black;
+  }
   h1 {
     font-family: 'Satistfy', cursive;
     text-align: center;
@@ -44,6 +65,7 @@
   h2 {
     text-align: center;
     margin: 5px 5px 5px 200px;
+
     /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
     background-repeat: no-repeat;
     background-position: 620px 0;
@@ -63,14 +85,29 @@
   /* ==== CREATE FORM ==== */
 
   .form-div {
+    /* border: 1px solid var(--darkest);
+    border-radius: 5px; */
     margin: 0 auto;
     width: 95%;
+    background-color: var(--lighter);
+    padding: 10px;
   }
     .form-div input {
       width: 100%;
+      height: 30px;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    .form-div label {
+      font-size: 20px;
     }
     .form-div select {
       width: 100%;
+      margin-bottom: 20px;
+      height: 30px;
+      font-size: 16px;
+
+
     }
 
   .radio-buttons {
@@ -87,21 +124,32 @@
   /* ==== RENDERED LIST ==== */
 
   .render-div {
+    /* border: 1px solid var(--darkest);
+    border-radius: 5px; */
+    background-color: var(--lighter);
     margin: 0 auto;
     text-align: center;
     width: 95%;
   }
 
   .render-div img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
   }
-  .block-div {
+  /* .block-div {
     display: flex;
 
-  }
+  } */
 
+.fancy {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.5em;
+}
 
+.scroll {
+  overflow-y: auto;
+  height: 600px;
+}
 /* ==================
 | | BROWSER VIEW
 ================== */
@@ -110,9 +158,7 @@
 
   /* ==== GENERAL ==== */
 
-  body {
-    background-color: lightblue;
-  }
+
 
   .container {
     max-width: 1000px;

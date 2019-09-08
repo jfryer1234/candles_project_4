@@ -39,7 +39,7 @@ class Main extends React.Component {
     })
     .then(jsonedCandle => {
       this.setState(prevState => {
-        prevState.candles.push(jsonedCandle)
+        prevState.candles.unshift(jsonedCandle)
         return { candles: prevState.candles }
       })
     })
@@ -99,7 +99,7 @@ class Main extends React.Component {
           handleUpdate={this.handleUpdate}
           />}
         </div>
-        <div>
+        <div className="scroll">
           {this.state.candles.map((candleData) => (
             <Render
             key={candleData.id}

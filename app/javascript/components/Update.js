@@ -73,14 +73,14 @@ class Update extends React.Component {
               <option value="sea_breeze">Sea Breeze</option>
               <option value="vanilla">Vanilla</option>
             </select>
-            <label htmlFor="embellishment">embellishment</label>
+            <label htmlFor="embellishment">Embellishment:</label>
             <select name="embellishment" id="embellishment" value={this.props.formInputs.embellishment} onChange={this.handleChange}>
               <option value="none">None</option>
               <option value="extra_bubbles">Extra Air Bubbles (for crackling)</option>
               <option value="rose_petals">Rose Petals</option>
               <option value="sea_salt">Sea Salt</option>
             </select>
-            <label htmlFor="color">color</label>
+            <label htmlFor="color">Color:</label>
             <select name="color" id="color" value={this.state.color} onChange={this.handleChange}>
               <option value="white">Ghost White</option>
               <option value="red">Scarlet Red</option>
