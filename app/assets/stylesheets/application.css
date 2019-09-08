@@ -9,11 +9,16 @@
 ================== */
 
  :root {
-   --darkest: #336699;
+   /* --darkest: #336699;
    --darker: #A6B1E1;
    --medium: #DCD6F7;
    --lighter: #B4BAC6;
-   --lightest: #CACFD6;
+   --lightest: #CACFD6; */
+   --darkest: #6E2529;
+   --darker: #547361;
+   --medium: #75A187;
+   --lighter: #6ABA8B;
+   --lightest: #FFBABA;
  }
 
 /* ==================
@@ -21,14 +26,37 @@
 ================== */
 
   /* ==== GENERAL ==== */
+/* html {
 
+} */
   body {
+    background-image: url("/images/background1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     margin: 0;
-    background-color: var(--medium);
+    /* background-image: url("/images/background1.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    /* background-color: var(--medium); */
     color: var(--darkest);
     font-family: 'Manjari', sans-serif;
   }
-
+  /* #image {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+  } */
   .container {
     margin: 0 auto;
     min-width: 400px;
@@ -43,21 +71,28 @@
   /* ==== HEADER ==== */
 
   header {
-    background-color: var(--darkest);
-    color: var(--medium);
+    /* background-color: var(--darkest); */
+    color: var(--darker);
     padding: 0;
   }
 
   h1 {
     font-family: 'Satistfy', cursive;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
     margin: 0 5px 5px 5px;
+    text-shadow:   -1px -1px 0 var(--darkest),
+     1px -1px 0 var(--darkest),
+     -1px 1px 0 var(--darkest),
+     1px 1px 0 var(--darkest);
   }
 
   h2 {
     text-align: center;
-    margin: 5px 5px 5px 200px;
+    margin: 5px 5px 5px 300px;
+    color: var(--darkest);
+    font-size: 2em;
+
     /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
     background-repeat: no-repeat;
     background-position: 620px 0;
@@ -80,17 +115,27 @@
     border-radius: 5px;
     margin: 0 auto;
     width: 95%;
-    background-color: var(--darker);
+    background-color: rgba(84, 115, 97, .7);
     padding: 10px;
   }
-    .form-div input {
+    .form-div input[type=submit] {
       width: 100%;
-      height: 30px;
+      height: 25px;
       font-size: 18px;
       margin-top: 20px;
+      background-color: var(--lightest);
+      color: var(--darkest);
+      border-radius: 3px;
+      border: 1px solid var(--darkest);
+    }
+    .form-div input:hover {
+      background-color: var(--darkest);
+      color: var(--lightest);
+      border: 1px solid var(--lightest);
     }
     .form-div label {
       font-size: 20px;
+
     }
     .form-div select {
       width: 100%;
@@ -115,29 +160,53 @@
   .render-div {
     border: 1px solid var(--darkest);
     border-radius: 5px;
-    background-color: var(--darker);
+    background-color: rgba(84, 115, 97, .7);
     margin: 0 auto;
     text-align: center;
     width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
   }
 
   .render-div img {
     width: 300px;
     height: 300px;
   }
+  .render-div h4 {
+    margin: 3px;
+  }
 
   .fancy {
     font-family: 'Satisfy', cursive;
     font-size: 1.5em;
+    text-shadow: 1px 1px var(--lightest);
   }
 
   .scroll {
     overflow-y: auto;
-    height: 600px;
+    height: 500px;
+  }
+  button {
+    background-color: var(--lightest);
+    padding: 2px 10px;
+    font-size: 14px;
+    margin: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--darkest);
+    color: var(--darkest);
+    height: 25px;
+  }
+  button:hover {
+    background-color: var(--darkest);
+    color: var(--lightest);
+    border: 1px solid var(--lightest);
   }
 
   /* ==== FOOTER ==== */
 
+  .space {
+    height: 80px;
+  }
   footer {
     background-color: var(--darkest);
     color: var(--medium);
@@ -150,13 +219,29 @@
   .footer-links {
     margin: 0 auto;
     width: 50%;
+    max-width: 550px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  .footer-links2 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer h4 {
+    margin: 0;
+    padding: 0;
+  }
+  footer h5 {
+    margin: 3px 15px;
+    padding: 7px 0 0 0;
+    font-family: 'Manjari', sans-serif;
+  }
 
   footer a, footer a:visited {
-    color: var(--medium);  
+    color: var(--medium);
   }
 
 /* ==================
@@ -189,6 +274,9 @@
   .thumbnail {
     width: 90px;
     height: 90px;
+  }
+  .space {
+    height: 0px;
   }
 
 }

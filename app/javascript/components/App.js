@@ -72,8 +72,11 @@ class App extends React.Component {
         view={this.state.view}
         formInputs={this.state.formInputs}
         />
+        <div className="space">
+        </div>
         <Footer />
       </div>
+
     )
   }
 }
