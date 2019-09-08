@@ -50,14 +50,15 @@
     background-size: contain; */
   }
 
-  h2::after {
+  /* h2::after {
     display: block;
     transform: scale(.1);
-    position: fixed;
+    position: relative;
     left: 50%;
     top: -20%;
     content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
-  }
+
+  } */
 
   /* ==== CREATE FORM ==== */
 
@@ -92,9 +93,14 @@
   }
 
   .render-div img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
+  .block-div {
+    display: flex;
+
+  }
+
 
 /* ==================
 | | BROWSER VIEW
