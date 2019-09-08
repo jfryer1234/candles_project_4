@@ -1,14 +1,18 @@
-//packages
+// PACKAGES
 import React from "react"
 
-//comp class
+// CLASS COMPONENT
 class Header extends React.Component {
+  // RENDER
   render () {
     return (
-      <h1>Header component</h1>
+      <header>
+        <h1 onClick={() => {this.props.handleView("home")}}>Candle deLight</h1>
+        <h2>find your perfect match</h2>
+      </header>
     )
   }
 }
 
-//export
+// EXPORT
 export default Header
