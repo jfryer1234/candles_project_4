@@ -4,6 +4,7 @@ import React from "react"
 // DEPENDENCIES
 import Main from "./Main.js"
 import Header from "./Header.js"
+import Footer from "./Footer.js"
 
 // CLASS COMPONENT
 class App extends React.Component {
@@ -65,13 +66,17 @@ class App extends React.Component {
   // RENDER
   render () {
     return (
-      <div className="container">
+      <div>
         <Header handleView={this.handleView} />
         <Main handleView={this.handleView}
         view={this.state.view}
         formInputs={this.state.formInputs}
         />
+        <div className="space">
+        </div>
+        <Footer />
       </div>
+
     )
   }
 }

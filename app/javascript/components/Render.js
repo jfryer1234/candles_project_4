@@ -166,8 +166,6 @@ class Render extends React.Component {
           <img src={this.directImage(this.props.candleData.color, this.props.candleData.packaging)} alt="a candle of this color and shape" />
           {this.props.candleData.scent_2 === "no_scent" ? <h4><span className="fancy"> Scent </span> : {this.state.scent[this.props.candleData.scent_1]}</h4> : <h4><span className="fancy"> Scents </span> : {this.state.scent[this.props.candleData.scent_1]} & {this.state.scent[this.props.candleData.scent_2]}</h4>}
           {this.props.candleData.embellishment === "none" ? "" : <h4><span className="fancy"> Embellishment </span> : {this.state.embellishment[this.props.candleData.embellishment]}</h4>}
-          <h4><span className="fancy"> Color </span>: {this.state.color[this.props.candleData.color]}</h4>
-          <h4><span className="fancy"> Packaging </span> : {this.state.packaging[this.props.candleData.packaging]}</h4>
         </div>
         <button type="button" onClick={() => {this.props.handleView("edit", this.props.candleData)}}>Edit</button>
         <button type="button" onClick={() => {this.props.handleDelete(this.props.candleData.id)}}>Delete</button>
