@@ -2,20 +2,18 @@
 | | Imported Fonts
 ================== */
 
- @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
- @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
  @import url('https://fonts.googleapis.com/css?family=Manjari|Satisfy&display=swap');
 
+/* ==================
+| | Variables
+================== */
 
- /* ==================
- | | Variables
- ================== */
  :root {
    --darkest: #336699;
-   --darker: #DCD6F7;
-   --medium: #A6B1E1;
-   --lighter: #CACFD6;
-   --lightest: #B4BAC6;
+   --darker: #A6B1E1;
+   --medium: #DCD6F7;
+   --lighter: #B4BAC6;
+   --lightest: #CACFD6;
  }
 
 /* ==================
@@ -24,15 +22,10 @@
 
   /* ==== GENERAL ==== */
 
-  /* * {
-    border: 1px solid gold;
-  } */
-
   body {
     margin: 0;
-    background-color: var(--darker);
+    background-color: var(--medium);
     color: var(--darkest);
-    /* font-family: 'Noto Sans TC', sans-serif; */
     font-family: 'Manjari', sans-serif;
   }
 
@@ -45,27 +38,26 @@
     margin: 0 auto;
     text-align: center;
     font-family: 'Satistfy', cursive;
-
-
   }
 
   /* ==== HEADER ==== */
 
   header {
     background-color: var(--darkest);
-    color: var(--darker);
+    color: var(--medium);
+    padding: 0;
   }
+
   h1 {
     font-family: 'Satistfy', cursive;
     text-align: center;
     font-size: 3em;
-    margin: 5px;
+    margin: 0 5px 5px 5px;
   }
 
   h2 {
     text-align: center;
     margin: 5px 5px 5px 200px;
-
     /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
     background-repeat: no-repeat;
     background-position: 620px 0;
@@ -79,17 +71,16 @@
     left: 50%;
     top: -20%;
     content:url('https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png');
-
   } */
 
   /* ==== CREATE FORM ==== */
 
   .form-div {
-    /* border: 1px solid var(--darkest);
-    border-radius: 5px; */
+    border: 1px solid var(--darkest);
+    border-radius: 5px;
     margin: 0 auto;
     width: 95%;
-    background-color: var(--medium);
+    background-color: var(--darker);
     padding: 10px;
   }
     .form-div input {
@@ -106,8 +97,6 @@
       margin-bottom: 20px;
       height: 30px;
       font-size: 16px;
-
-
     }
 
   .radio-buttons {
@@ -124,9 +113,9 @@
   /* ==== RENDERED LIST ==== */
 
   .render-div {
-    /* border: 1px solid var(--darkest);
-    border-radius: 5px; */
-    background-color: var(--medium);
+    border: 1px solid var(--darkest);
+    border-radius: 5px;
+    background-color: var(--darker);
     margin: 0 auto;
     text-align: center;
     width: 95%;
@@ -136,20 +125,40 @@
     width: 300px;
     height: 300px;
   }
-  /* .block-div {
+
+  .fancy {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.5em;
+  }
+
+  .scroll {
+    overflow-y: auto;
+    height: 600px;
+  }
+
+  /* ==== FOOTER ==== */
+
+  footer {
+    background-color: var(--darkest);
+    color: var(--medium);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+  }
+
+  .footer-links {
+    margin: 0 auto;
+    width: 50%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  } */
+  footer a, footer a:visited {
+    color: var(--medium);  
+  }
 
-.fancy {
-  font-family: 'Satisfy', cursive;
-  font-size: 1.5em;
-}
-
-.scroll {
-  overflow-y: auto;
-  height: 600px;
-}
 /* ==================
 | | BROWSER VIEW
 ================== */
@@ -157,8 +166,6 @@
 @media only screen and (min-width: 850px) {
 
   /* ==== GENERAL ==== */
-
-
 
   .container {
     max-width: 1000px;
