@@ -30,7 +30,6 @@ class Create extends React.Component {
   render () {
     return (
       <div className="form-div">
-        <div>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="scent_1">Scent 1:</label>
             <select name="scent_1" id="scent_1" onChange={this.handleChange}>
@@ -62,14 +61,14 @@ class Create extends React.Component {
               <option value="sea_breeze">Sea Breeze</option>
               <option value="vanilla">Vanilla</option>
             </select>
-            <label htmlFor="embellishment">embellishment</label>
+            <label htmlFor="embellishment">Embellishment:</label>
             <select name="embellishment" id="embellishment" onChange={this.handleChange}>
               <option value="none">None</option>
               <option value="extra_bubbles">Extra Air Bubbles (for crackling)</option>
               <option value="rose_petals">Rose Petals</option>
               <option value="sea_salt">Sea Salt</option>
             </select>
-            <label htmlFor="color">color</label>
+            <label htmlFor="color">Color:</label>
             <select name="color" id="color" onChange={this.handleChange}>
               <option value="white">Ghost White</option>
               <option value="red">Scarlet Red</option>
@@ -128,7 +127,6 @@ class Create extends React.Component {
             </div>
             <input type="submit" />
           </form>
-        </div>
       </div>
     )
   }
