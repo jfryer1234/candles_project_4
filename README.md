@@ -1,7 +1,11 @@
-# README
+# Candle deLights
+Find Your Perfect Match
 
-## Candle Delights
-## Find Your Perfect Match
+## Table of Contents
+* Introduction
+* Technologies
+* Link to Live Site
+
 
 An app to create and save your candle creations.
 
