@@ -89,7 +89,7 @@ class Main extends React.Component {
       <div>
         <div className="mobile-flex">
         <div>
-        <h1 className="align-center">{this.props.view.pageTitle}</h1>
+        <h2 className="align-center">{this.props.view.pageTitle}</h2>
         { this.props.view.page === "home" ?
           <Create
           handleCreate={this.handleCreate}

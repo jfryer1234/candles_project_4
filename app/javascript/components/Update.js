@@ -95,7 +95,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="taper"
-                     defaultChecked={this.state.packaging === "taper"}
+                     checked={this.state.packaging === "taper"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/taper-white.png"
@@ -106,7 +106,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="glass_jar"
-                     defaultChecked={this.state.packaging === "glass_jar"}
+                     checked={this.state.packaging === "glass_jar"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/jar-white.png"
@@ -117,7 +117,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="pillar"
-                     defaultChecked={this.state.packaging === "pillar"}
+                     checked={this.state.packaging === "pillar"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/pillar-white.png"
@@ -128,7 +128,7 @@ class Update extends React.Component {
               <input type="radio"
                      name="packaging"
                      value="three_wick"
-                     defaultChecked={this.state.packaging === "three_wick"}
+                     checked={this.state.packaging === "three_wick"}
                      onChange={this.handleRadioButton}
               />
               <img src="/images/3wick-white.png"
