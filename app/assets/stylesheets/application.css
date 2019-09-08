@@ -4,6 +4,7 @@
 
  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
  @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
+ @import url('https://fonts.googleapis.com/css?family=Manjari|Satisfy&display=swap');
 
 /* ==================
 | | MOBILE VIEW
@@ -17,7 +18,8 @@
 
   body {
     background-color: lightgreen;
-    font-family: 'Noto Sans TC', sans-serif;
+    /* font-family: 'Noto Sans TC', sans-serif; */
+    font-family: 'Manjari', sans-serif;
   }
 
   .container {
@@ -33,13 +35,15 @@
   /* ==== HEADER ==== */
 
   h1 {
+    font-family: 'Satistfy', cursive;
     text-align: center;
+    font-size: 3em;
+    margin: 5px;
   }
 
   h2 {
-    font-family: 'Satistfy', cursive;
     text-align: center;
-    margin-left: 200px;
+    margin: 5px 5px 5px 200px;
     /* background-image: url("https://cdn3.iconfinder.com/data/icons/camp-2/100/Plan_de_travail_1_copie_10-512.png");
     background-repeat: no-repeat;
     background-position: 620px 0;
@@ -87,6 +91,11 @@
     width: 95%;
   }
 
+  .render-div img {
+    width: 300px;
+    height: 300px;
+  }
+
 /* ==================
 | | BROWSER VIEW
 ================== */
@@ -97,7 +106,6 @@
 
   body {
     background-color: lightblue;
-    font-family: 'Noto Sans TC', sans-serif;
   }
 
   .container {
