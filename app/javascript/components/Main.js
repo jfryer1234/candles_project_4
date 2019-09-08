@@ -86,7 +86,7 @@ class Main extends React.Component {
   // RENDER
   render () {
     return (
-      <div>
+      <div className="container">
         <div className="mobile-flex">
         <div>
         <h2 className="align-center">{this.props.view.pageTitle}</h2>
