@@ -57,7 +57,7 @@ class Main extends React.Component {
     .then(json => {
       this.setState(prevState=> {
         const candles = prevState.candles.filter( candle => candle.id !== id)
-        return { candles}
+        return {candles}
       })
     })
     .catch(err => console.log(err))
@@ -73,8 +73,16 @@ class Main extends React.Component {
       }
     })
     .then(updatedCandle => {
+      return updatedCandle.json()
+    })
+    .then(updatedCandle => {
       this.props.handleView('home')
-      this.fetchCandles()
+      this.setState(prevState => {
+        const candles = prevState.candles.filter(candle => candle.id !== updateCandle.id)
+        candles.unshift(updatedCandle)
+        console.log(updatedCandle);
+        return {candles}
+      })
     })
     .catch(err => console.log(err))
   }
