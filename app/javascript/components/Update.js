@@ -74,7 +74,7 @@ class Update extends React.Component {
               <option value="vanilla">Vanilla</option>
             </select>
             <label htmlFor="embellishment">Embellishment:</label>
-            <select name="embellishment" id="embellishment" value={this.props.formInputs.embellishment} onChange={this.handleChange}>
+            <select name="embellishment" id="embellishment" value={this.state.embellishment} onChange={this.handleChange}>
               <option value="none">None</option>
               <option value="extra_bubbles">Extra Air Bubbles (for crackling)</option>
               <option value="rose_petals">Rose Petals</option>
