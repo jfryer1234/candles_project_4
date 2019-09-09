@@ -73,10 +73,14 @@ class Main extends React.Component {
       }
     })
     .then(updatedCandle => {
+      return updatedCandle.json()
+    })
+    .then(updatedCandle => {
       this.props.handleView('home')
       this.setState(prevState => {
         const candles = prevState.candles.filter(candle => candle.id !== updateCandle.id)
         candles.unshift(updatedCandle)
+        console.log(updatedCandle);
         return {candles}
       })
     })
