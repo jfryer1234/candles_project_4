@@ -60,7 +60,7 @@
   h1 {
     font-family: 'Satistfy', cursive;
     text-align: center;
-    font-size: 4em;
+    font-size: 2.5em;
     margin: 0 5px 5px 5px;
     text-shadow:   -1px -1px 0 var(--darkest),
      1px -1px 0 var(--darkest),
@@ -70,9 +70,8 @@
 
   h2 {
     text-align: center;
-    margin: 5px 5px 5px 300px;
     color: var(--darkest);
-    font-size: 2em;
+    font-size: 1.3em;
   }
 
   /* ==== CREATE FORM ==== */
@@ -232,6 +231,17 @@
   .container {
     max-width: 1000px;
   }
+  /* ==== HEADER ==== */
+
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 5px 5px 5px 300px;
+  }
+
 
   /* ==== CREATE FORM ==== */
 
