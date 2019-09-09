@@ -42,6 +42,8 @@
     /* background-color: var(--medium); */
     color: var(--darkest);
     font-family: 'Manjari', sans-serif;
+    overflow-y: auto;
+    height: 800px;
   }
   /* #image {
     min-height: 100%;
