@@ -34,13 +34,12 @@
     margin: 0;
     color: var(--darkest);
     font-family: 'Manjari', sans-serif;
-    overflow-y: auto;
-    height: 800px;
   }
 
   .container {
     margin: 0 auto;
-    min-width: 400px;
+    min-width: 375px;
+    max-width: 100%;
   }
 
   .align-center {
@@ -80,7 +79,7 @@
     border: 1px solid var(--darkest);
     border-radius: 5px;
     margin: 0 auto;
-    width: 95%;
+    width: 90%;
     background-color: rgba(84, 115, 97, .7);
     padding: 10px;
   }
@@ -132,7 +131,7 @@
     background-color: rgba(84, 115, 97, .7);
     margin: 0 auto;
     text-align: center;
-    width: 95%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
   }
@@ -228,9 +227,15 @@
 
   /* ==== GENERAL ==== */
 
+  body {
+  overflow-y: auto;
+  height: 800px;
+  }
+
   .container {
     max-width: 1000px;
   }
+
   /* ==== HEADER ==== */
 
   h1 {
